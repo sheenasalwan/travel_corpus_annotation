@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<title style="font-size:14pt">where2go</title>
+<head><script language="javascript" type="text/javascript" src="frontend.js"> </script>	</head>head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">where2go</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#stats" class="w3-bar-item w3-button">Corpus Statistics</a>
+      <a href="#search" class="w3-bar-item w3-button">Search Corpus</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="/w3images/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Le Catering</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- Main Section -->
+  <div class="w3-row w3-padding-64" id="main">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+        <iframe width="1060" height="615" src="https://www.youtube.com/embed/BV_M2In0GxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  
+  <hr>
+  
+  
+  <!-- Stats Section -->
+  <div class="w3-row w3-padding-64" id="stats">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-left">Corpus Statistics</h1><br><br><br><br><br><br>
+      <h6>Total number of documents:  <b>5,328</b></h6><br>
+      <h6>Total number of tokens:  <b>1,486,436</b> </h6><br>
+      <h6> Total number of types:  <b>50,607<b> </h6><br>
+      <h6> % Programmatically annotated: <b>90%</b></h6><br>
+      <h6> Documents worked by annotators: <b>267</b></h6><br>
+
+      
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="wordcloud.png" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <!-- Search Corpus Section -->
+  <div id="search">
+    <div >
+      <h1 class="w3-left">Search Text in Corpus</h1><br>&nbsp;( will match overview )<br><br><br><br>
+      <form action="/pos/" id="form">
+        <label for="search" style="font-size:14pt"> Search : &nbsp;</label>
+        <input type="text" style="height:45px" id="search" name="search" size="100" placeholder=" Try swimming, kayaking, snorkeling, riding etc.">&nbsp;&nbsp;
+        <button type="button" style="height:45px;width:100px" onclick="update_page()"> &nbsp;Submit&nbsp; </button>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+      </form>
+      <div  class="maintext" id="maintext">
+    </div>
+
+    <!-- Search Corpus Section -->
+  <div id="annot_dropdown">
+    <div >
+      <h1 class="w3-left">Search Annotations in Corpus</h1><br>&nbsp;( will match object )<br><br><br><br>
+      <form action="/pos_annot/" id="dropdown">
+        <label for="search" style="font-size:14pt"> Search : &nbsp;</label>
+        <select name='annot_drop_down' id='annot_drop_down' style="height:45px;width:245px"><option value=swimming>swimming</option><option value=riding>riding</option><option value=snorkeling>snorkeling</option><option value=horseriding>horseriding</option><option value=shopping>shopping</option><option value=hiking>hiking</option><option value=cliff jumping>cliff jumping</option><option value=rope swinging>rope swinging</option><option value=walking tour>walking tour</option><option value=hike up>hike up</option><option value=diving>diving</option><option value=cruise>cruise</option><option value=travel>travel</option><option value=tours>tours</option><option value=snorkel>snorkel</option><option value=getaway>getaway</option><option value=trip>trip</option><option value=boat ride>boat ride</option><option value=drive>drive</option><option value=tasting>tasting</option><option value=swim>swim</option><option value=explore>explore</option><option value=tour>tour</option><option value=horse back ridding>horse back ridding</option><option value=hopping>hopping</option><option value=bird training>bird training</option><option value=snorkel outing>snorkel outing</option><option value=sailing>sailing</option><option value=bird-watching>bird-watching</option><option value=relaxing>relaxing</option><option value=fishing>fishing</option><option value=flyboarding>flyboarding</option><option value=kayak>kayak</option><option value=paddling>paddling</option><option value=horseback riding>horseback riding</option><option value=ride>ride</option><option value=paddle>paddle</option><option value=dive>dive</option><option value=driving>driving</option><option value=horseback ride>horseback ride</option><option value=historic sites>historic sites</option><option value=adventure>adventure</option><option value=farming>farming</option><option value=riders>riders</option><option value=scuba diving>scuba diving</option><option value=trekking>trekking</option><option value=hiring / relax>hiring / relax</option><option value=learning>learning</option><option value=boat tour>boat tour</option><option value=hike>hike</option><option value=cliff jump>cliff jump</option><option value=walk>walk</option><option value=trot>trot</option><option value=canter>canter</option><option value=ride / thrilling>ride / thrilling</option><option value=watching>watching</option><option value=excursion>excursion</option><option value=dip>dip</option><option value=kiteboarding>kiteboarding</option><option value=scuba>scuba</option><option value=water dive>water dive</option><option value=chocolate tour>chocolate tour</option><option value=pair>pair</option><option value=snorkel.swim>snorkel.swim</option><option value=cooking>cooking</option><option value=sailing tour>sailing tour</option><option value=visit>visit</option><option value=clib>clib</option><option value=play>play</option><option value=sightseeing>sightseeing</option><option value=excursions>excursions</option><option value=jumping>jumping</option><option value=riding tour>riding tour</option><option value=sail>sail</option><option value=snorkeling site>snorkeling site</option><option value=full-day tour>full-day tour</option><option value=guided sightseeing tour>guided sightseeing tour</option><option value=sip>sip</option><option value=climb>climb</option><option value=float>float</option><option value=jetskiing>jetskiing</option><option value=sightseeing tour>sightseeing tour</option><option value=guide>guide</option><option value=zipline>zipline</option><option value=travelling>travelling</option><option value=traveling>traveling</option><option value=divers>divers</option><option value=exploring>exploring</option><option value=scooter>scooter</option><option value=boating>boating</option><option value=sailing and snorkeling>sailing and snorkeling</option><option value=cliff diving>cliff diving</option><option value=navigate>navigate</option><option value=walking>walking</option><option value=pumping>pumping</option><option value=trail>trail</option><option value=atv tour>atv tour</option><option value=learn>learn</option><option value=full day tour>full day tour</option><option value=bike riding>bike riding</option><option value=guided tour>guided tour</option><option value=shopping excursion>shopping excursion</option><option value=water sports>water sports</option><option value=lounging>lounging</option><option value=speedboat>speedboat</option><option value=swims>swims</option><option value=sunbathe>sunbathe</option><option value=island hop>island hop</option><option value=explore marine life>explore marine life</option><option value=relax>relax</option><option value=driving tour>driving tour</option><option value=splash>splash</option><option value=guided day trip>guided day trip</option><option value=ziplining>ziplining</option><option value=feast>feast</option><option value=eat>eat</option><option value=waterfall rappelling>waterfall rappelling</option><option value=observe>observe</option><option value=coach tour>coach tour</option><option value=lunch>lunch</option><option value=brunch>brunch</option><option value=flying>flying</option><option value=snorkell>snorkell</option><option value=relaxation>relaxation</option><option value=art>art</option><option value=sunset cruise listen>sunset cruise listen</option><option value=watch>watch</option><option value=pedal>pedal</option><option value=cycling>cycling</option><option value=shop>shop</option><option value=view>view</option><option value=follow>follow</option><option value=sample food and drink>sample food and drink</option><option value=beach hopping off the coast>beach hopping off the coast</option><option value=see colorful corals>see colorful corals</option><option value=discover>discover</option><option value=kayaking>kayaking</option><option value=listen>listen</option><option value=parasailing>parasailing</option><option value=petting zoo>petting zoo</option><option value=kayaking and snorkeling>kayaking and snorkeling</option><option value=reflect>reflect</option><option value=food tour>food tour</option><option value=hikes>hikes</option><option value=viewing>viewing</option><option value=tour.>tour.</option><option value=glide>glide</option><option value=admire jungle scenery>admire jungle scenery</option><option value=private tour>private tour</option><option value=kitesurfing>kitesurfing</option><option value=get up>get up</option><option value=buy>buy</option><option value=private guided tour>private guided tour</option><option value=small-group tour>small-group tour</option><option value=charter>charter</option><option value=vist>vist</option><option value=barbecue>barbecue</option><option value=frolicking>frolicking</option><option value=stand-up paddleboarding>stand-up paddleboarding</option><option value=climbing>climbing</option><option value=multi-stop tour>multi-stop tour</option><option value=cultural tour>cultural tour</option><option value=playing>playing</option><option value=surfing>surfing</option><option value=practicing>practicing</option><option value=atv off-road adventure>atv off-road adventure</option><option value=eating>eating</option><option value=lounge>lounge</option><option value=full-day land and sea tour>full-day land and sea tour</option><option value=boarding a catamaran>boarding a catamaran</option><option value=sing>sing</option><option value=dance>dance</option><option value=visit two different snorkel locations>visit two different snorkel locations</option><option value=observing the abundant marine life in each>observing the abundant marine life in each</option><option value=cruise explore visit watersports relax>cruise explore visit watersports relax</option><option value=powerboat>powerboat</option><option value=views>views</option><option value=dining>dining</option><option value=taste>taste</option><option value=jet skiing>jet skiing</option><option value=sunset sailing cruise>sunset sailing cruise</option><option value=jump>jump</option><option value=slide>slide</option><option value=bath>bath</option><option value=deep sea fishing>deep sea fishing</option><option value=in-shore/light tackle fishing>in-shore/light tackle fishing</option><option value=sample>sample</option></select>&nbsp;&nbsp;        
+        <!--<select name='annot_drop_down' style="width:245px;height:45px" id='annot_drop_down' ><option value=swimming>Swimming</option><option value=riding>Riding</option></select>&nbsp;&nbsp;-->
+        <button type="button" style="height:45px;width:100px" onclick="update_page_annotations()"> &nbsp;Submit&nbsp; </button>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+      </form>
+      <div  class="maintext2" id="maintext2">
+    </div>
+ 
+    </div>
+    
+  </div>
+
+  <hr>
+
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Contact <a href="https://www.linkedin.com/in/sheenasalwan/" title="W3.CSS" target="_blank" class="w3-hover-text-green">Sheena Salwan&nbsp;</a>
+    <a href="https://www.linkedin.com/in/shounakmondal/" title="W3.CSS" target="_blank" class="w3-hover-text-green">Shounak Mondal&nbsp;</a>
+    <a href="https://masterdatascience.ubc.ca/" title="W3.CSS" target="_blank" class="w3-hover-text-green">Quang Vu&nbsp;</a>
+    <a href="https://www.linkedin.com/in/jytonyli/" title="W3.CSS" target="_blank" class="w3-hover-text-green">Toni Li&nbsp;</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script language="javascript" type="text/javascript" src="frontend.js"> </script>	
+        <link rel="stylesheet" type="text/css" href="frontend.css">
+    </head>   
+    <body>
+        <div class='search_area' style="width: 50%; float:left">
+            <h1 style="font-size:28px;">Where2Go Corpus and Annotation</h1>  
+            <h2 style="font-size:18px;"><b>Semantic Search Functionality: Where do you want to go?</b></h2>
+            <button class="button">A beach town with sailing and zipling</button> 
+            <button class="button">Honeymoon to a beach destination with camping</button> 
+            <button class="button">Get away from London to a place with good local cuisine</button> <br> 
+            <img src="placeholder_table.png" alt="placeholder_table" width="700" height="250">
+            <h2 style="font-size:18px;"><b>Browse our corpus and annotations</b></p>  
+            <form action="/pos/" id="form">
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search" size="50" placeholder="Suggested Activities: Snokling, Swimming, Kayaking etc.">
+                <button type="button" onclick="update_page()"> Submit </button>
+            </form>
+            <div  class="maintext" id="maintext">
+            </div>
+        </div>
+        <div class="vl"></div>
+        <div class='info_area' style="width: 48%; float:right">
+            <h1 style="font-size:28px;">Corpus Information</h1>
+            <h2 style="font-size:18px;"><b>Corpus Stats for corpus created from airbnb and tripadvisor overview and reviews</b></h2>
+            Total number of documents:  5,328 <br>
+            Total number of sentences:  78,060 <br>
+            Total number of tokens:  1,486,436 <br>
+            Total number of types:  50,607 <br>
+            % Documents automatically annotated: 90% <br>
+            Number of documents where annotations were validated by humans ( Amazon Mechanical Turk ): 267 <br>
+            Inter Annotator Agreement Score: 47% <br><br>
+            Note: This score was achieved on the annotation which was free text, non fixed number and multi word - 'Objects' of RDF Subject, Predicate, Object Triples <br>
+            <h2 style="font-size:18px;"><b>Most Common Annotations</b></h2>
+            <img src="wordcloud.png" alt="WorldCloud" width="375" height="375">
+        </div>
+    </body>
+</html>
